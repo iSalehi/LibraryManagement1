@@ -1,1 +1,35 @@
+public class Book {
+    private String title;
+    private boolean isBorrowed;
 
+    public Book(String title) {
+        this.title = title;
+        this.isBorrowed = false;
+    }
+
+    public void borrowBook() {
+        if (!isBorrowed) {
+            isBorrowed = true;
+            System.out.println("You borrowed: " + title);
+        } else {
+            System.out.println("That book is already borrowed.");
+        }
+    }
+
+    public void returnBook() {
+        if (isBorrowed) {
+            isBorrowed = false;
+            System.out.println("You returned: " + title);
+        } else {
+            System.out.println("That book wasn't borrowed.");
+        }
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public boolean isBorrowed() {
+        return isBorrowed;
+    }
+}
